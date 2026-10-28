@@ -1,0 +1,75 @@
+name: Suggest a resource
+description: 推荐一个值得收录的 UGC 平台、工具、教程或素材库
+title: "[resource] "
+labels: ["suggestion"]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: 链接
+      description: 官方站点 / 官方文档 / 仓库主页，不要带跟踪参数
+      placeholder: https://example.com/
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: 归属平台
+      options:
+        - Roblox / 罗布乐思
+        - 蛋仔派对
+        - 元梦之星 / 圆梦之星
+        - 奥拉星
+        - 迷你世界
+        - 我的世界 / Minecraft
+        - 跨平台 / AI / 生态
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: 类别
+      options:
+        - 平台与官方文档
+        - 编辑器与开发工具
+        - 美术 · 建模 · 贴图
+        - AI 提效工具
+        - 素材与资源库
+        - 教程与学习路径
+        - 创作者计划与变现
+        - 社区与交流
+        - 数据与选品
+        - 政策与合规
+        - 开源项目
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: 一句话说明
+      description: 它替创作者解决了哪一步？≤100 字
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 实测证据
+      description: 你访问该链接时的日期、HTTP 状态、页面标题；以及它为什么比现有条目更好
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: 授权 / 收费
+      description: 免费、订阅、一次性买断、CC0、平台条款、未知
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认
+      options:
+        - label: 我不是盗版、破解、外挂、私服或账号交易站点
+          required: true
+        - label: 该条目不是重复收录（我已搜索过 README 与 data/catalog.json）
+          required: true

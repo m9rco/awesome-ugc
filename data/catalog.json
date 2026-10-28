@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-28",
+  "intro": "UGC 生态资源目录。所有条目均由 curl/urllib 实测（HTTP 200 + 页面标题核对）后收录。",
+  "platforms": [
+    {
+      "id": "roblox",
+      "name": "Roblox / 罗布乐思",
+      "desc": "全球最大的 UGC 游戏平台，Roblox Studio + Blender 是服饰/道具创作主流程。",
+      "aliases": ["萝卜lox", "罗布乐思", "Roblox"],
+      "doc": "docs/PLATFORMS/roblox.md"
+    },
+    {
+      "id": "eggy_party",
+      "name": "蛋仔派对",
+      "desc": "网易派对游戏，蛋仔工坊承载地图与皮肤创作，乐园是分发入口。",
+      "aliases": ["Eggy Party", "蛋仔"],
+      "doc": "docs/PLATFORMS/eggy-party.md"
+    },
+    {
+      "id": "dreamstar",
+      "name": "元梦之星 / 圆梦之星",
+      "desc": "腾讯天美派对游戏，UGC 编辑器与创作者激励并行。",
+      "aliases": ["圆梦之星", "Dream Star", "元梦之星"],
+      "doc": "docs/PLATFORMS/dreamstar.md"
+    },
+    {
+      "id": "aola_star",
+      "name": "奥拉星",
+      "desc": "国产精灵养成 / 角色 IP 生态，含玩家自制角色与同人出图社群。",
+      "aliases": ["奥拉热星"],
+      "doc": "docs/PLATFORMS/aola-star.md"
+    },
+    {
+      "id": "mini_world",
+      "name": "迷你世界",
+      "desc": "国产沙盒，皮肤与地图创作门槛低，128×128 皮肤是典型交付物。",
+      "aliases": ["Mini World"],
+      "doc": "docs/PLATFORMS/mini-world.md"
+    },
+    {
+      "id": "minecraft",
+      "name": "我的世界 / Minecraft",
+      "desc": "像素皮肤、材质包、模组与数据包，社区工具链最成熟。",
+      "aliases": ["Minecraft", "MC"],
+      "doc": "docs/PLATFORMS/minecraft.md"
+    },
+    {
+      "id": "agnostic",
+      "name": "跨平台 · AI 提效 · 生态",
+      "desc": "不绑定单一平台：AI 出图/建模/贴图工具链、素材授权、数据选品、政策合规。",
+      "aliases": [],
+      "doc": "docs/PLATFORMS/agnostic.md"
+    }
+  ],
+  "categories": [
+    { "id": "platform", "name": "平台与官方文档" },
+    { "id": "editor", "name": "编辑器与开发工具" },
+    { "id": "art", "name": "美术 · 建模 · 贴图" },
+    { "id": "ai", "name": "AI 提效工具" },
+    { "id": "asset", "name": "素材与资源库" },
+    { "id": "tutorial", "name": "教程与学习路径" },
+    { "id": "creator_program", "name": "创作者计划与变现" },
+    { "id": "community", "name": "社区与交流" },
+    { "id": "analytics", "name": "数据与选品" },
+    { "id": "policy", "name": "政策与合规" },
+    { "id": "open_source", "name": "开源项目" }
+  ],
+  "stages": [
+    { "id": "concept", "name": "概念与灵感" },
+    { "id": "image", "name": "出图 / 立绘" },
+    { "id": "3d", "name": "3D 与模型" },
+    { "id": "texture", "name": "贴图与材质" },
+    { "id": "upscale", "name": "放大与修复" },
+    { "id": "remove_bg", "name": "抠图与去背" },
+    { "id": "video", "name": "视频与动效" },
+    { "id": "audio", "name": "配音与音频" },
+    { "id": "batch", "name": "批量排版与产能" },
+    { "id": "publish", "name": "发布与自动化" },
+    { "id": "dataset", "name": "数据与训练" }
+  ],
+  "entries": []
+}

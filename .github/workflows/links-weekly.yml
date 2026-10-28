@@ -1,0 +1,55 @@
+name: Weekly link check
+
+on:
+  schedule:
+    - cron: "17 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  links:
+    name: Probe catalog URLs
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Probe every catalog URL
+        run: python scripts/check_links.py --timeout 25 --workers 6 --strict --json reports/links.json
+        continue-on-error: true
+        id: probe
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: weekly-link-report
+          path: reports/links.json
+      - name: Open an issue when links rot
+        if: steps.probe.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = JSON.parse(fs.readFileSync('reports/links.json', 'utf8'));
+            const dead = report.results.filter((r) => r.status === null || r.status >= 400);
+            const body = [
+              'The weekly link probe found unreachable entries.',
+              '',
+              '| id | url | status |',
+              '| --- | --- | --- |',
+              ...dead.map((r) => `| ${r.id} | ${r.url} | ${r.status ?? 'no response'} |`),
+            ].join('\n');
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Link rot detected in ${dead.length} entries`,
+              body,
+            });

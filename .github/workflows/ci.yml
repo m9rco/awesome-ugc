@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: python -m pip install --disable-pip-version-check ruff
+      - name: Lint Python
+        run: ruff check .
+      - name: Validate catalog JSON
+        run: python -c "import json,pathlib; json.load(open('data/catalog.json', encoding='utf-8')); print('catalog.json is valid JSON')"
+
+  test:
+    name: Test (Python ${{ matrix.python }})
+    needs: lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install --disable-pip-version-check pytest
+      - name: Run tests
+        run: python -m pytest
+      - name: Check README is generated from the catalog
+        run: python scripts/build_readme.py --check
+
+  links:
+    name: Link health (advisory)
+    needs: lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Probe every catalog URL
+        run: python scripts/check_links.py --timeout 20 --workers 8 --json reports/links.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: link-report
+          path: reports/links.json

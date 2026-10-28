@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 收录标准与提交流程
+    url: https://github.com/m9rco/awesome-ugc/blob/main/CONTRIBUTING.md
+    about: 提交前先读收录门槛：可验证、官方优先、不重复、不收录盗版与账号交易。
