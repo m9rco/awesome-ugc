@@ -47,16 +47,29 @@ def test_catalog_shape(catalog: dict) -> None:
         assert catalog[key], f"{key} must not be empty"
 
 
+def _status_ok(item: dict) -> bool:
+    """200-3xx = 命令行可复核；401/403/429 仅在"已用浏览器二次核实"时放行（反爬站点）。"""
+    status = item["http_status"]
+    if 200 <= status < 400:
+        return True
+    return (
+        bool(item.get("bot_wall"))
+        and status in {401, 403, 429}
+        and "browser" in str(item.get("verified_via", ""))
+    )
+
+
 def test_entry_fields(entries: list[dict]) -> None:
     for item in entries:
         missing = REQUIRED_FIELDS - item.keys()
         assert not missing, f"{item.get('id')} missing {sorted(missing)}"
         assert item["url"].startswith("https://"), f"{item['id']} must use https"
         assert isinstance(item["http_status"], int)
-        assert 200 <= item["http_status"] < 400, f"{item['id']} status {item['http_status']}"
+        assert _status_ok(item), f"{item['id']} status {item['http_status']}"
         assert item["lang"] in {"zh", "en"}, f"{item['id']} lang {item['lang']}"
         assert 2 <= len(item["name"]) <= 80, f"{item['id']} name length"
         assert 4 <= len(item["summary"]) <= 100, f"{item['id']} summary length"
+        assert item["verified_title"].strip(), f"{item['id']} missing verified_title"
 
 
 def test_vocabularies(catalog: dict, entries: list[dict]) -> None:
