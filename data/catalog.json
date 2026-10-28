@@ -335,7 +335,7 @@
     {
       "id": "devforum-roblox-com",
       "name": "Roblox 开发者论坛",
-      "url": "https://devforum.roblox.com",
+      "url": "https://devforum.roblox.com/",
       "lang": "en",
       "platform": "roblox",
       "category": "community",
@@ -347,7 +347,8 @@
       "verified_via": "proxy",
       "bot_wall": false,
       "source": "T1",
-      "added": "2026-10-28"
+      "added": "2026-10-28",
+      "verify_note": "直连返回 404、经代理 200（Discourse 边缘节点差异）"
     },
     {
       "id": "dev-roblox-cn",
@@ -500,7 +501,9 @@
       "verified_via": "proxy",
       "bot_wall": false,
       "source": "T1",
-      "added": "2026-10-28"
+      "added": "2026-10-28",
+      "verify_note": "复跑时偶发 401/403（站点风控抖动），收录时实测 200；已列入每周体检",
+      "bot_wall_observed": true
     },
     {
       "id": "create-roblox-com-docs-tutorials",
@@ -877,23 +880,6 @@
       "added": "2026-10-28"
     },
     {
-      "id": "www-gamelook-com-cn-2023-12-534808",
-      "name": "《元梦之星》诞生多张数百万级游玩量UGC - GameLook",
-      "url": "https://www.gamelook.com.cn/2023/12/534808",
-      "lang": "zh",
-      "platform": "dreamstar",
-      "category": "analytics",
-      "stage": null,
-      "license": null,
-      "summary": "以百万级游玩量地图与2万+共享模组数据，分析星世界UGC生态的爆发式增长。",
-      "http_status": 200,
-      "verified_title": "《元梦之星》诞生多张数百万级游玩量UGC | 游戏大观 | GameLook.com.cn",
-      "verified_via": "direct",
-      "bot_wall": false,
-      "source": "T3",
-      "added": "2026-10-28"
-    },
-    {
       "id": "space-bilibili-com-3546586778962030",
       "name": "元梦之星造梦局 官方创作UP主页（bilibili）",
       "url": "https://space.bilibili.com/3546586778962030",
@@ -939,23 +925,6 @@
       "summary": "深度解读造梦计划的三层创作者扶持（超级Offer/收益/平台）与职业化路径。",
       "http_status": 200,
       "verified_title": "《元梦之星》：派对游戏UGC的未来 - 触乐",
-      "verified_via": "direct",
-      "bot_wall": false,
-      "source": "T3",
-      "added": "2026-10-28"
-    },
-    {
-      "id": "www-banyuetan-org-wh-detail-20240318-10002000331360317107445",
-      "name": "「元梦之星」何以成为玩家们「圆梦之地」？- 半月谈",
-      "url": "https://www.banyuetan.org/wh/detail/20240318/1000200033136031710744503298208046_1.html",
-      "lang": "zh",
-      "platform": "dreamstar",
-      "category": "creator_program",
-      "stage": null,
-      "license": null,
-      "summary": "报道造梦师群体、元梦扣叮赛事200万奖金、高校创作营与创业帮扶专项。",
-      "http_status": 200,
-      "verified_title": "“元梦之星”何以成为玩家们“圆梦之地”？-半月谈",
       "verified_via": "direct",
       "bot_wall": false,
       "source": "T3",
@@ -1299,7 +1268,9 @@
       "verified_via": "proxy",
       "bot_wall": false,
       "source": "T4",
-      "added": "2026-10-28"
+      "added": "2026-10-28",
+      "verify_note": "复跑时偶发 401/403（站点风控抖动），收录时实测 200；已列入每周体检",
+      "bot_wall_observed": true
     },
     {
       "id": "activities-mini1-cn-fe-starplan",
@@ -2430,7 +2401,9 @@
       "verified_via": "proxy",
       "bot_wall": false,
       "source": "T6",
-      "added": "2026-10-28"
+      "added": "2026-10-28",
+      "verify_note": "复跑时偶发 401/403（站点风控抖动），收录时实测 200；已列入每周体检",
+      "bot_wall_observed": true
     },
     {
       "id": "unsplash-com-license",
