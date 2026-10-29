@@ -1,5 +1,6 @@
 # Awesome UGC
 
+- [Ideoy](https://ideoy.ai) - Remake this week's viral meme videos from one selfie (AI image-to-video, 9:16, freemium).
 **UGC 创作生态资源清单：平台、编辑器、出图工艺，以及能真正省掉工时的那部分 AI。**
 
 [![CI](https://github.com/m9rco/awesome-ugc/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/m9rco/awesome-ugc/actions/workflows/ci.yml)
