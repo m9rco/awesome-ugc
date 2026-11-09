@@ -12,7 +12,14 @@
 
 ### Added
 
-- `docs/RESEARCH.md` §7「剔除留档」：补录六条调研轨自述的 **65 条被拒候选**（URL + 状态码 + 剔除理由），补齐"为什么没收录"这半条证据链（标注为自述、未经逐条复测）。
+- **2026-11-09 周维护新增 5 条**（补齐 mini_world / aola_star / channels 三个薄弱平台，全部本机 curl 实测 200，标题取页面 `<title>` 原文）：
+  - `www-mini1-cn-picture-list` — 迷你世界 图音专区（同人绘 / 壁纸），`https://www.mini1.cn/picture_list`。
+  - `www-mini1-cn-news-list-activity-html` — 迷你世界 官方活动（高校游戏创作挑战赛、绘画创作赛等），`https://www.mini1.cn/news_list/activity.html`。
+  - `aola-100bt-com-tougaocenter-html` — 奥拉星 投稿专区（亚比手绘 / 鼠绘 / 四格漫画投稿），`https://aola.100bt.com/tougaocenter.html`。
+  - `www-kuaishou-com-norm` — 快手社区规范，`https://www.kuaishou.com/norm`。
+  - `weixin-qq-com-cgi-bin-readtemplate-t-weixin-agreement-s-video` — 微信视频号运营规范，`https://weixin.qq.com/cgi-bin/readtemplate?t=weixin_agreement&s=video`。
+- **2026-11-09 链接体检**：145 条全量复测，136 ok / 0 DEAD / 9 反爬拦截（401/403，非下线），本轮无死链、无链接更新、无移除。
+
 - `scripts/check_links.py`：代理回退条件扩展——直连返回 4xx（非反爬白名单）时也回退代理复测，使本机结果与 CI 更一致。
 
 ## [0.1.0] - 2026-10-28
