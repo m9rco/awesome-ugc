@@ -6,12 +6,20 @@
 
 ### Changed
 
+- 2026-11-16：`huggingface-co-briaai-rmbg-1-4` 链接复核 huggingface.co → huggingface.co（URL 未变），周体检 DEAD 实为 `SSL UNEXPECTED_EOF_WHILE_READING` TLS 握手瞬时异常、非站点下线；curl 代理实测 200、`<title>`「briaai/RMBG-1.4 · Hugging Face」与库内记录一致，保留官方 URL 并补 `verify_note`。
+- 2026-11-16：`huggingface-co-microsoft-florence-2-large` 链接复核 huggingface.co → huggingface.co（URL 未变），同上 TLS 误报；curl 直连/代理均 200、`<title>`「microsoft/Florence-2-large · Hugging Face」与库内记录一致，保留官方 URL 并补 `verify_note`。
 - **final pass 复核处置**：Roblox 开发者论坛条目换为规范 URL `https://devforum.roblox.com/`（直连 404 / 代理 200 的边缘节点差异）；剔除 2 条全路不可复核的 CN 新闻页（GameLook、半月谈），URL 与原因留档。
 - 对复跑时出现 401/403 的条目补 `verify_note`（站点风控抖动，收录时实测 200），并已进入每周体检。
 - 目录条目数由 147 调整为 **145**。
 
 ### Added
 
+- **2026-11-16 周维护新增 4 条**（补齐 mini_world / aola_star / channels 薄弱平台，全部本机 curl 实测 200，标题取页面 `<title>` 原文，访问日期 2026-11-16）：
+  - `www-mini1-cn-article-20190527-839-html` — 《迷你世界》游戏许可及服务协议释义，`https://www.mini1.cn/article/20190527/839.html`。
+  - `aola-100bt-com-zixun-167753-html` — 奥拉星官网投稿说明，`https://aola.100bt.com/zixun/167753.html`。
+  - `creator-douyin-com` — 抖音创作者中心，`https://creator.douyin.com/`。
+  - `creator-xiaohongshu-com` — 小红书创作服务平台，`https://creator.xiaohongshu.com/`。
+- **2026-11-16 链接体检**：150 条全量复测，138 ok / 10 反爬拦截（401/403）/ 2 条误报 DEAD（TLS 握手异常，curl 复核均 200）；无真实死链、无链接更新、无移除。剔除 2 条不合格候选：mini1 创作者学院规范页（无 `<title>`、正文 JS 加载）与 samr 国标立项公示页（非已发布标准文本）。
 - **2026-11-09 周维护新增 5 条**（补齐 mini_world / aola_star / channels 三个薄弱平台，全部本机 curl 实测 200，标题取页面 `<title>` 原文）：
   - `www-mini1-cn-picture-list` — 迷你世界 图音专区（同人绘 / 壁纸），`https://www.mini1.cn/picture_list`。
   - `www-mini1-cn-news-list-activity-html` — 迷你世界 官方活动（高校游戏创作挑战赛、绘画创作赛等），`https://www.mini1.cn/news_list/activity.html`。
