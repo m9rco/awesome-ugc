@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-09",
+  "updated_at": "2026-11-16",
   "intro": "UGC 生态资源目录。每条 URL 均由父进程独立复核（curl 直连/代理 + 反爬墙链接经真实浏览器确认），记录状态码、页面标题与核验途径。",
   "platforms": [
     {
@@ -1707,7 +1707,8 @@
       "verified_via": "proxy",
       "bot_wall": false,
       "source": "T5",
-      "added": "2026-10-28"
+      "added": "2026-10-28",
+      "verify_note": "2026-11-16 周体检 DEAD 为 SSL UNEXPECTED_EOF_WHILE_READING（TLS 握手瞬时异常，非站点下线）；curl 复核 200 且 <title> 与库内记录一致，URL 未变，保留官方链接"
     },
     {
       "id": "huggingface-co-microsoft-florence-2-large",
@@ -1724,7 +1725,8 @@
       "verified_via": "proxy",
       "bot_wall": false,
       "source": "T5",
-      "added": "2026-10-28"
+      "added": "2026-10-28",
+      "verify_note": "2026-11-16 周体检 DEAD 为 SSL UNEXPECTED_EOF_WHILE_READING（TLS 握手瞬时异常，非站点下线）；curl 复核 200 且 <title> 与库内记录一致，URL 未变，保留官方链接"
     },
     {
       "id": "github-com-kohya-ss-sd-scripts",
@@ -2795,6 +2797,74 @@
       "bot_wall": false,
       "source": "T6",
       "added": "2026-11-09"
+    },
+    {
+      "id": "www-mini1-cn-article-20190527-839-html",
+      "name": "《迷你世界》游戏许可及服务协议释义",
+      "url": "https://www.mini1.cn/article/20190527/839.html",
+      "lang": "zh",
+      "platform": "mini_world",
+      "category": "policy",
+      "stage": null,
+      "license": "平台条款",
+      "summary": "官方释义：UGC 改编内容与独创内容的知识产权归属、平台使用权范围与授权边界。",
+      "http_status": 200,
+      "verified_title": "有关《迷你世界》游戏许可及服务协议的释义_迷你世界手游_迷你世界官方网站",
+      "verified_via": "direct",
+      "bot_wall": false,
+      "source": "T4",
+      "added": "2026-11-16"
+    },
+    {
+      "id": "aola-100bt-com-zixun-167753-html",
+      "name": "奥拉星官网投稿说明",
+      "url": "https://aola.100bt.com/zixun/167753.html",
+      "lang": "zh",
+      "platform": "aola_star",
+      "category": "tutorial",
+      "stage": null,
+      "license": null,
+      "summary": "官方投稿指引：可投稿体裁、图文与视频投稿渠道、审核与采纳规则，长期维护。",
+      "http_status": 200,
+      "verified_title": "奥拉星官网投稿说明_百田奥拉星官网",
+      "verified_via": "direct",
+      "bot_wall": false,
+      "source": "T4",
+      "added": "2026-11-16"
+    },
+    {
+      "id": "creator-douyin-com",
+      "name": "抖音创作者中心",
+      "url": "https://creator.douyin.com/",
+      "lang": "zh",
+      "platform": "channels",
+      "category": "platform",
+      "stage": null,
+      "license": "平台条款",
+      "summary": "抖音官方创作者后台入口：作品管理、数据看板与创作权益，需登录使用。",
+      "http_status": 200,
+      "verified_title": "抖音创作者中心",
+      "verified_via": "direct",
+      "bot_wall": false,
+      "source": "T6",
+      "added": "2026-11-16"
+    },
+    {
+      "id": "creator-xiaohongshu-com",
+      "name": "小红书创作服务平台",
+      "url": "https://creator.xiaohongshu.com/",
+      "lang": "zh",
+      "platform": "channels",
+      "category": "platform",
+      "stage": null,
+      "license": "平台条款",
+      "summary": "小红书官方创作者后台入口：笔记发布、创作灵感与数据复盘，需登录使用。",
+      "http_status": 200,
+      "verified_title": "小红书创作服务平台",
+      "verified_via": "direct",
+      "bot_wall": false,
+      "source": "T6",
+      "added": "2026-11-16"
     }
   ]
 }
