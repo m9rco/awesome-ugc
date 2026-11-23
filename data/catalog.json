@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-16",
+  "updated_at": "2026-11-23",
   "intro": "UGC 生态资源目录。每条 URL 均由父进程独立复核（curl 直连/代理 + 反爬墙链接经真实浏览器确认），记录状态码、页面标题与核验途径。",
   "platforms": [
     {
@@ -313,7 +313,8 @@
       "verified_via": "browser (title normalized)",
       "bot_wall": false,
       "source": "T1",
-      "added": "2026-10-28"
+      "added": "2026-10-28",
+      "verify_note": "2026-11-23 周体检 DEAD 为 SSL UNEXPECTED_EOF_WHILE_READING（TLS 握手瞬时异常，非站点下线）；curl 代理实测 200（301 至 /store/models）、直连重试亦曾 200，联网搜索确认 create.roblox.com/store 仍为官方创作者商店入口，URL 未变，保留官方链接"
     },
     {
       "id": "create-roblox-com-docs-marketplace-publish-to-marketplace",
@@ -1474,7 +1475,8 @@
       "verified_via": "proxy",
       "bot_wall": false,
       "source": "T4",
-      "added": "2026-10-28"
+      "added": "2026-10-28",
+      "verify_note": "2026-11-23 周体检 DEAD 为 SSL UNEXPECTED_EOF_WHILE_READING（TLS 握手瞬时异常，非站点下线）；curl 代理实测 200 且 <title>「Resources | NeoForged docs」与库内记录一致，联网搜索确认官方 Resources 文档仍在，URL 未变，保留官方链接"
     },
     {
       "id": "www-tiktok-com-community-guidelines",
@@ -2865,6 +2867,91 @@
       "bot_wall": false,
       "source": "T6",
       "added": "2026-11-16"
+    },
+    {
+      "id": "wiki-miniworldgame-com",
+      "name": "Mini World: CREATA 官方 Wiki（国际版）",
+      "url": "https://wiki.miniworldgame.com/",
+      "lang": "en",
+      "platform": "mini_world",
+      "category": "tutorial",
+      "stage": null,
+      "license": null,
+      "summary": "迷你世界国际版官方 Wiki 首页，汇总开发者中心、地图编辑与玩法创作文档入口。",
+      "http_status": 200,
+      "verified_title": "Welcome to the Official Mini World: CREATA Wiki! [WIKI - Mini World: CREATA]",
+      "verified_via": "direct",
+      "bot_wall": false,
+      "source": "T4",
+      "added": "2026-11-23"
+    },
+    {
+      "id": "wiki-miniworldgame-com-map-developer-guide",
+      "name": "Map Developer Guide（地图开发者指南）",
+      "url": "https://wiki.miniworldgame.com/developer_center:developer_editor:map_developer_guide",
+      "lang": "en",
+      "platform": "mini_world",
+      "category": "tutorial",
+      "stage": null,
+      "license": null,
+      "summary": "官方地图制作规范：地图尺寸、字体与 UI 适配、排行榜及多语言文本的落地约束。",
+      "http_status": 200,
+      "verified_title": "1 Map Developer Guide [WIKI - Mini World: CREATA]",
+      "verified_via": "direct",
+      "bot_wall": false,
+      "source": "T4",
+      "added": "2026-11-23"
+    },
+    {
+      "id": "www-100bt-com-alx-320287",
+      "name": "奥拉星手游六周年「伊乐头像创作征集」",
+      "url": "https://www.100bt.com/alx/320287/",
+      "lang": "zh",
+      "platform": "aola_star",
+      "category": "creator_program",
+      "stage": null,
+      "license": null,
+      "summary": "官方头像创作征集规则：原创与 AI 生成内容限制、入选作品知识产权归属说明。",
+      "http_status": 200,
+      "verified_title": "奥拉星手游六周年「伊乐头像创作征集」_奥拉星手游",
+      "verified_via": "direct",
+      "bot_wall": false,
+      "source": "T4",
+      "added": "2026-11-23"
+    },
+    {
+      "id": "channels-weixin-qq-com",
+      "name": "视频号助手",
+      "url": "https://channels.weixin.qq.com/",
+      "lang": "zh",
+      "platform": "channels",
+      "category": "platform",
+      "stage": null,
+      "license": "平台条款",
+      "summary": "微信视频号官方创作者后台：内容管理、直播推流、数据中心与变现权益，需登录使用。",
+      "http_status": 200,
+      "verified_title": "视频号助手",
+      "verified_via": "direct",
+      "bot_wall": false,
+      "source": "T6",
+      "added": "2026-11-23"
+    },
+    {
+      "id": "findeross-weixin-qq-com-helper-center-guide",
+      "name": "微信视频号·视频号助手使用指南",
+      "url": "https://findeross.weixin.qq.com/cgi-bin/mmfindernodelivecrmwebbroker-bin/helper-center/pages/CFop5MyQaj10zRco",
+      "lang": "zh",
+      "platform": "channels",
+      "category": "tutorial",
+      "stage": null,
+      "license": null,
+      "summary": "官方使用指南：登录与运营者权限、定时发表、合集管理、原创声明与数据中心操作路径。",
+      "http_status": 200,
+      "verified_title": "微信视频号-视频号助手使用指南",
+      "verified_via": "direct",
+      "bot_wall": false,
+      "source": "T6",
+      "added": "2026-11-23"
     }
   ]
 }
